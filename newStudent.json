@@ -1,0 +1,9 @@
+{
+  "name": "Monika",
+  "location": "Mexico",
+  "phone": "12345",
+  "courses": [
+    "Java",
+    "Selenium"
+  ]
+}

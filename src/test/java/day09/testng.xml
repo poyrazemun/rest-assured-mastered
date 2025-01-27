@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="API Chaining">
+    <test name="ReqRes API">
+        <classes>
+            <class name="day09.TestCreateUser"/>
+            <class name="day09.TestGetUser"/>
+            <class name="day09.TestUpdateUser"/>
+            <class name="day09.TestDeleteUser"/>
+        </classes>
+    </test>
+</suite>
