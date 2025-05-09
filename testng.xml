@@ -4,7 +4,6 @@
     <test name="ReqRes API">
         <classes>
             <class name="day09.TestCreateUser"/>
-            <class name="day09.TestGetUser"/>
             <class name="day09.TestUpdateUser"/>
             <class name="day09.TestDeleteUser"/>
         </classes>

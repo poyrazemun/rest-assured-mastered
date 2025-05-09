@@ -27,10 +27,10 @@ public class TestHTTPRequests {
     @Test(priority = 1)
     public void testListUser() {
 
-        when().get("https://reqres.in/api/users?page=2")
+        given().header("x-api-key", "reqres-free-v1").
+                when().get("https://reqres.in/api/users?page=2")
                 .then().statusCode(200)
-                .body("page", equalTo(2))
-                .log().all();
+                .body("page", equalTo(2));
 
 
     }
@@ -42,10 +42,10 @@ public class TestHTTPRequests {
         hm.put("name", "Veli");
         hm.put("job", "Senior QA Engineer");
 
-        id = given().contentType("application/json").body(hm)
+        id = given().contentType("application/json").body(hm).header("x-api-key", "reqres-free-v1")
                 .when().post("https://reqres.in/api/users")
                 .jsonPath().getInt("id");
-        // .then().statusCode(201).log().all();
+
 
     }
 
@@ -55,15 +55,16 @@ public class TestHTTPRequests {
         newData.put("name", "Ali");
         newData.put("job", "QA Manager");
 
-        given().contentType("application/json").body(newData)
+        given().contentType("application/json").body(newData).header("x-api-key", "reqres-free-v1")
                 .when().put("https://reqres.in/api/users/" + id)
-                .then().statusCode(200).log().all();
+                .then().statusCode(200);
     }
 
 
     @Test(priority = 4, dependsOnMethods = {"testUpdateUser"})
     public void testDeleteUser() {
-        when().delete("https://reqres.in/api/users/" + id).
-                then().statusCode(204);
+        given().header("x-api-key", "reqres-free-v1")
+                .when().delete("https://reqres.in/api/users/" + id)
+                .then().statusCode(204);
     }
 }

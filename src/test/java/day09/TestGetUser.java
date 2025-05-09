@@ -19,6 +19,9 @@ public class TestGetUser {
 
         System.out.println(user_id + " from testGetUser");
 
+        //bu test her zaman failed result verecek cunku, createUser ile olusturdugumuz
+        //user tekrar fetch edilemiyor.
+
     }
 
 }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="API">
+    <test name="ReqRes API">
+        <classes>
+            <class name="day01.TestHTTPRequests"/>
+        </classes>
+    </test>
+</suite>
